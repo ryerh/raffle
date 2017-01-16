@@ -1,7 +1,7 @@
 const App = new Vue({
   el: '#app',
   data: {
-    count: 0,
+    count: 2,
     isPlaying: true,
     isRevealing: false,
   },

@@ -10,7 +10,7 @@
   <div id="app">
     <div id="container"></div>
 
-    <ul id="raffle">
+    <ul id="raffle" class="hidden">
       <li @click="handleSetCount(0)" :class="{active: count === 0}">
         奖项设置
       </li>
@@ -28,7 +28,7 @@
       </li>
     </ul>
 
-    <button class="music-btn" @click="handleMusic">{{isPlaying ? '||' : '>'}}</button>
+    <button class="music-btn hidden" @click="handleMusic">{{isPlaying ? '||' : '>'}}</button>
     <button class="start-btn" @click="handleStart" :disabled="count < 1 || isRevealing">START</button>
   </div>
 

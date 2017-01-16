@@ -71,10 +71,10 @@ function init() {
   // grid
   for (let i = 0; i < TOTAL_COUNT; i ++) {
     const object = new THREE.Object3D();
-    const COLUMNS = 4;
+    const COLUMNS = 3;
 
     object.position.x = ((Math.floor(i / COLUMNS)) * 300) - 500;
-    object.position.y = ((i % COLUMNS) * 300) - 500;
+    object.position.y = ((i % COLUMNS) * 300) - 300;
     object.position.z = 2000;
     gridTargets.push(object);
   }
@@ -95,12 +95,12 @@ function init() {
   // audio
   const listener = new THREE.AudioListener();
   camera.add( listener );
-  sound = new THREE.Audio( listener );
+  window.sound = new THREE.Audio( listener );
   const audioLoader = new THREE.AudioLoader();
   audioLoader.load( 'sounds/wwm.mp3', function( buffer ) {
-    sound.setBuffer( buffer );
-    sound.setLoop(true);
-    sound.play();
+    window.sound.setBuffer( buffer );
+    window.sound.setLoop(true);
+    window.sound.play();
   });
 
   window.addEventListener('resize', onWindowResize);
